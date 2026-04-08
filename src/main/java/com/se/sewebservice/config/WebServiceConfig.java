@@ -149,7 +149,7 @@ public void addInterceptors(List<EndpointInterceptor> interceptors) {
         DefaultWsdl11Definition wsdl = new DefaultWsdl11Definition();
         wsdl.setPortTypeName("ShapeToolPort");
         wsdl.setLocationUri("/ws/shapetool");
-        wsdl.setTargetNamespace("http://wuniversity.edu/se/shapetool");
+        wsdl.setTargetNamespace("http://webservice.wdu/shapetool");
         wsdl.setSchema(schema);
         return wsdl;
     }
