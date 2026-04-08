@@ -1,0 +1,10 @@
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+    <SOAP-ENV:Header/>
+    <SOAP-ENV:Body>
+        <ns2:SquareAreaResponse xmlns:ns2="http://wuniversity.edu/se/shapetool">
+            <ns2:area>
+                25.0
+            </ns2:area>
+        </ns2:SquareAreaResponse>
+    </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

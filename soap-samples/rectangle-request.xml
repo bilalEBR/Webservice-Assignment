@@ -1,0 +1,11 @@
+
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+                  xmlns:shape="http://wuniversity.edu/se/shapetool">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <shape:RectangleAreaRequest>
+         <shape:length>10.0</shape:length>
+         <shape:width>4.0</shape:width>
+      </shape:RectangleAreaRequest>
+   </soapenv:Body>
+</soapenv:Envelope>

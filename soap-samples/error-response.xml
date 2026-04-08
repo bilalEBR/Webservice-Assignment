@@ -1,0 +1,21 @@
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+    <SOAP-ENV:Header/>
+    <SOAP-ENV:Body>
+        <SOAP-ENV:Fault>
+            <faultcode>
+                SOAP-ENV:Client
+            </faultcode>
+            <faultstring xml:lang="en">
+                ShapeTool Error: Provided data does not match the required format.
+            </faultstring>
+            <detail>
+                <spring-ws:ValidationError xmlns:spring-ws="http://springframework.org/spring-ws">
+                    cvc-minInclusive-valid: Value '-10.0' is not facet-valid with respect to minInclusive '0.0E1' for type 'NonNegativeDouble'.
+                </spring-ws:ValidationError>
+                <spring-ws:ValidationError xmlns:spring-ws="http://springframework.org/spring-ws">
+                    cvc-type.3.1.3: The value '-10.0' of element 'shape:radius' is not valid.
+                </spring-ws:ValidationError>
+            </detail>
+        </SOAP-ENV:Fault>
+    </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
