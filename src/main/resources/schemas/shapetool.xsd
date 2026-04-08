@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
-           targetNamespace="http://wuniversity.edu/se/shapetool"
-           xmlns:tns="http://wuniversity.edu/se/shapetool"
+           targetNamespace="http://webservice.wdu/shapetool"
+           xmlns:tns="http://webservice.wdu/shapetool"
            elementFormDefault="qualified">
 
     <!-- Reusable type to prevent negative numbers -->
