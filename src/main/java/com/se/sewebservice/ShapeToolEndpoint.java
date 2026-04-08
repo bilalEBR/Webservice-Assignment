@@ -1,6 +1,6 @@
 package com.se.sewebservice;
 
-import edu.wuniversity.se.shapetool.*; // Adjust based on generated package
+import wdu.webservice.shapetool.*;  // Adjust based on generated package
 import org.springframework.ws.server.endpoint.annotation.Endpoint;
 import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
 import org.springframework.ws.server.endpoint.annotation.RequestPayload;
@@ -8,7 +8,7 @@ import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
 
 @Endpoint
 public class ShapeToolEndpoint {
-    private static final String NAMESPACE_URI = "http://wuniversity.edu/se/shapetool";
+    private static final String NAMESPACE_URI = "http://webservice.wdu/shapetool";
 
     @PayloadRoot(namespace = NAMESPACE_URI, localPart = "CircleAreaRequest")
     @ResponsePayload
