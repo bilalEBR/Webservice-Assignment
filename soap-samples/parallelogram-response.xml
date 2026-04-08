@@ -1,7 +1,7 @@
 <SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
     <SOAP-ENV:Header/>
     <SOAP-ENV:Body>
-        <ns2:ParallelogramAreaResponse xmlns:ns2="http://wuniversity.edu/se/shapetool">
+        <ns2:ParallelogramAreaResponse xmlns:ns2="http://webservice.wdu/shapetool">
             <ns2:area>
                 72.0
             </ns2:area>

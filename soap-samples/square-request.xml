@@ -1,6 +1,6 @@
 
 <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
-                  xmlns:shape="http://wuniversity.edu/se/shapetool">
+                  xmlns:shape="http://webservice.wdu/shapetool">
    <soapenv:Header/>
    <soapenv:Body>
       <shape:SquareAreaRequest>
