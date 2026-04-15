@@ -1,59 +1,52 @@
-<!-- <h2> Step 1</h2>
-<p>Download Git from:
-https://git-scm.com/download/win </p>
-<p>Run the installer.</p>
-<p>Click Next through the setup (default settings are fine).
-<p>Click Install and finish.</p>
-<h2> Verify Installation</h2> 
-<p>Press Windows + R</p>
-<p>Type cmd and press Enter</p>
-<p> Type:</p>
-<b> git --versio </b>
-<p> If installed correctly, it will show the Git version.</p>
-<h2>Step 3</h2>
-<p>Go to the Folder Where You Want to Save the Project </p>
-<p>Clone the Repository </p>
-    <b> git clone https://github.com/gitdeme/webservice-2018.git</b>
-<p>Git will download the project files to your computer.</p>
+# ShapeTool SOAP Web Service Implementation
 
+| Student Information | Details |
+| :--- | :--- |
+| **Name** | Bilal Ebrahim |
+| **ID** | 145647 |
+| **University** | Woldia University |
+| **Department** | Software Engineering (5th Year) |
+| **Project** | Assignment 1 - ShapeTool Web Service |
+| **Presentation Date** | April 8, 2026 |
 
+---
+## 1. Project Overview
+The **ShapeTool** is a professional SOAP-based web service developed to perform geometric area calculations. This project adheres to the principles of **Service-Oriented Architecture (SOA)** and utilizes a **Contract-First development approach**. The service exposes multiple operations to calculate the area of circles, squares, rectangles, parallelograms, and triangles, ensuring data integrity through strict XML validation.
 
+## 2. Design Decisions
+- **Contract-First Approach:** The XML Schema (XSD) was designed before any Java code. This ensures that the service contract is independent of the implementation and provides a clear definition for clients.
+- **Spring Boot Framework:** Chosen for its robust support for Spring-WS, allowing for easy integration of WSDL generation and SOAP message handling.
+- **Data Precision:** All calculations utilize `xs:double` to ensure high precision for geometric results.
 
-
-
-
-<h2>To access the generated WSDL, access the webservice by wrting as follow</h2>
-http://localhost:8080/ws/calculator.wsdl -->
-
-
-
-# ShapeTool SOAP Web Service
-- **Name:** Bilal Ebrahim
-- **Id:** 145647
-- **University:** Woldia University  
-- **Department:** Software Engineering (5th Year)
-
-## 1. Design Decisions
-- **Contract-First Approach:** We designed the XSD first to ensure a strict data contract between client and server.
-- **Java Spring Boot:** Used for its robust Spring-WS support and embedded Tomcat server.
-
-## 2. Schema (XSD) Structure
+## 3. Schema (XSD) Structure
 - **Target Namespace:** `http://wuniversity.edu/se/shapetool`
 - **Data Types:** Used `xs:double` for precision in area calculations.
 - **Restrictions:** Implemented `minInclusive="0.0"` for all dimensions to prevent negative inputs.
 
-## 3. Service Operations
-- `circleArea`: Calculates πr².
-- `squareArea`: Calculates side².
-- `rectangleArea`: Calculates L × W.
-- `parallelogramArea`: Calculates B × H.
-- `triangleArea`: Calculates 0.5 × B × H.
+## 4. Service Operations
+- The service provides the following operations via the ShapeToolPort:
+- **Operation** | **Input Parameters** | **Mathematical Formula**
+- **circleArea** | radius | Area = π × r²
+- **squareArea** | side | Area = side²
+- **rectangleArea** | length, width | Area = L × W
+- **parallelogramArea** | base, height | Area = base × height
+- **triangleArea** | base, height | Area = 0.5 × base × height
 
-## 4. Validation & Error Handling
+## 5. Validation & Error Handling
 - **Interceptor:** A `PayloadValidatingInterceptor` was configured in `WebServiceConfig`.
 - **Fault Handling:** When XSD validation fails (e.g., negative radius), the service automatically returns a `SOAP-ENV:Client` Fault with a descriptive error message.
+  
+## 6. SOAP Request & Response Samples
+- For ease of testing and evidence of functionality, a dedicated directory named `soap-samples/` is located in the project root. 
+- This folder contains complete XML message examples for every operation:
+- **Circle**: `circle-request.xml` / `circle-response.xml`
+- **Square**: `square-request.xml` / `square-response.xml`
+- **Rectangle**: `rectangle-request.xml` / `rectangle-response.xml`
+- **Parallelogram**: `parallelogram-request.xml` / `parallelogram-response.xml`
+- **Triangle**: `triangle-request.xml` / `triangle-response.xml`
+- Each request file demonstrates the correct namespace usage (`http://webservice.wdu/shapetool`) and the structured format required by the service.
 
-## 5. How to Run & Test
+## 7. How to Run & Test
 1. Run `./mvnw spring-boot:run`
 2. Access WSDL: `http://localhost:8080/ws/shapetool.wsdl`
 3. Use Postman/SoapUI to send POST requests to `http://localhost:8080/ws/shapetool`
